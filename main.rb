@@ -1,11 +1,12 @@
 require 'sinatra'
 
-iPhone5 = Apple-iPhone5C2/1001.525
+before { @agent = request.user_agent }
 
-get '/', :agent => iPhone5 do # to check agent , should be modify :agent arguement
-  if 'coupang://'
-    redirect to('coupang://')
+get '/'do
+  chrome = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36"
+  if @agent == chrome
+    "you are using chrome"
   else
-    redirect to('https://itunes.apple.com/us/app/kupang-coupang/id454434967?mt=8')
+    "something else"
   end
 end
