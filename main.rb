@@ -12,8 +12,6 @@ require 'useragent'
 
 get '/' do
   raw_user_agent = request.user_agent
-  # raw_user_agent = "Apple-iPhone5C2/1001.525"
-  # user_agent = UserAgent.parse(raw_user_agent)
-  # user_agent.platform
-  raw_user_agent
+  user_agent = UserAgent.parse(raw_user_agent)
+  user_agent.platform
 end
