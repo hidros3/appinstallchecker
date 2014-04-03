@@ -1,3 +1,15 @@
-<script src="custom.js" type="text/javascript"></script>
+<script type="text/javascript">
+function startMyApp()
+{
+  document.location = 'coupang://';
+  setTimeout( function()
+  {
+      if( confirm( 'You do not seem to have Your App installed, do you want to go download it now?'))
+      {
+        document.location = 'http://itunes.apple.com/us/app/kupang-coupang/id454434967?mt=8';
+      }
+  }, 300);
+ }
+</script>
 <p>Welcome to iOS</p>
 <p><%= request.user_agent %></p>
