@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'useragent'
-require 'coffe-script'
 
 # -------------------
 # step 1.
