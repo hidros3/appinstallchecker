@@ -1,14 +1,21 @@
 <script type="text/javascript">
-function startMyApp()
-{
-  document.location = 'coupang://';
-  setTimeout( function()
-  {
-      {
-        document.location = 'http://itunes.apple.com/us/app/kupang-coupang/id454434967?mt=8';
-      }
-  }, 300);
- }
- start();
+
+// To avoid the "protocol not supported" alert, fail must open another app.
+var appstorefail = "http://itunes.apple.com/us/app/kupang-coupang/id454434967?mt=8";
+
+var loadedAt = +new Date;
+setTimeout(
+  function(){
+    if (+new Date - loadedAt < 2000){
+      window.location = appstorefail;
+    }
+  }
+,100);
+
+function LaunchApp(){
+  window.open("coupang://","_self");
+};
+LaunchApp()
 </script>
+
 <p>Welcome to iOS</p>
