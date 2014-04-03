@@ -13,7 +13,7 @@ require 'useragent'
 get '/' do
   raw_user_agent = request.user_agent
   user_agent = UserAgent.parse(raw_user_agent)
-
+  "os: #{user_agent.os} platform: #{user_agent.platform}"
   # if user_agent.platform == "iPhone"
   #   erb :ios
   # elsif user_agent.platform == "Android"
